@@ -9,7 +9,7 @@ export default function Home() {
       </Head>
 
       <main>
-        <Link href="/">home</Link>
+        <Link href="/index">home</Link>
         <Link href="/search">Search</Link>
         <h1 className="title">
           Welcome to <a href="https://nextjs.org">Next.js!</a>
@@ -208,4 +208,11 @@ export default function Home() {
       `}</style>
     </div>
   );
+}
+
+export async function getStaticProps(context) {
+  console.log("called getStaticProps from search");
+  return {
+    props: {} // will be passed to the page component as props
+  };
 }
